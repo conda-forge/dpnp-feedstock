@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.20.0"
+  version: "0.21.0"
   buildnumber: 0
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/IntelPython/dpnp/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 4b12c63358ff656868e33d16c62633c6ddd1c7981e6c9f62ba67cb1146b2a874
+  sha256: fae0debe9fad0313121b6b9c9a21842343827f5ca02f3537ebb2d18734479105
 
 build:
   number: ${{ buildnumber }}
