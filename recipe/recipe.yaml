@@ -26,29 +26,30 @@ requirements:
     - ${{ compiler('cxx') }}
     - ${{ stdlib('c') }}
     - ${{ compiler('dpcpp') }}
-    - ninja
-    - cmake
+    - ninja >=1.11.1
+    - cmake >=3.31.6
   host:
     - python
-    - pip
-    - pybind11
-    - setuptools
-    - wheel
-    - python-build
-    - scikit-build
-    - cython >=3
+    - pip >=25.0
+    - pybind11 >=3.0.2
+    - setuptools >=79.0.1
+    - wheel >=0.45.1
+    - python-build >=1.2.2
+    - scikit-build >=0.18.1
+    - cython >=3.1.0
     - numpy
     - versioneer ==0.29
     # versioneer dependency
     - if: match(python, "<3.11")
       then: tomli
-    - dpctl
+    - dpctl >=0.23.0
     - mkl-devel-dpcpp
     - onedpl-devel
     - tbb-devel
   run:
     - python
     - ${{ pin_compatible('dpctl', lower_bound='x.x.x', upper_bound=None) }}
+    - numpy >=1.26.0
     # the Intel OpenCL runtime intentionally leaves the ICD loader to the consumer
     - if: linux
       then: ocl-icd-system
